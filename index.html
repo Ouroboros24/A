@@ -13,8 +13,9 @@
       --spacer: 2.5rem;
       --option-width: 190px;
       --option-height: 190px;
-      --option-expanded-height: 300px;
       --option-gap: 4.5rem;
+      --expand-bg: #353b41;
+      --expand-bg-light: #454d55;
     }
     html, body {
       height: 100%;
@@ -61,7 +62,7 @@
       border: none;
       border-radius: 2rem;
       width: var(--option-width);
-      height: var(--option-height);
+      min-height: var(--option-height);
       box-shadow: 0 4px 18px rgba(20,23,27,0.14);
       font-size: 1.35rem;
       font-weight: 500;
@@ -70,36 +71,42 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: visible;
-      transition: background 0.18s, height 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.17s;
+      transition: background 0.18s, box-shadow 0.17s;
     }
-    .option-btn .option-label {
+    .option-label {
       z-index: 2;
       pointer-events: none;
       transition: color 0.15s;
-    }
-    .option-btn .option-expand {
+      padding: 3.5rem 0 0 0;
       display: block;
+      position: relative;
+    }
+    .option-expand {
+      display: flex;
+      flex-direction: column;
       opacity: 0;
       pointer-events: none;
       position: absolute;
       left: 0; right: 0;
       top: 100%;
       width: 100%;
-      background: rgba(44, 50, 57, 0.99);
+      background: var(--expand-bg-light);
       color: var(--white);
       font-size: 1rem;
       border-radius: 0 0 2rem 2rem;
       box-shadow: 0 8px 36px 2px rgba(44,52,62,0.18);
-      padding: 1.4rem 1rem 1.5rem 1rem;
+      padding: 1.3rem 1rem 1.4rem 1rem;
       transition: opacity 0.18s;
       text-align: center;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
     }
     .option-btn:hover,
     .option-btn:focus {
       background: var(--button-hover);
-      height: var(--option-expanded-height);
       outline: none;
       box-shadow: 0 12px 36px 2px rgba(44,52,62,0.19);
     }
@@ -116,7 +123,7 @@
       }
       .option-btn {
         width: 160px;
-        height: 160px;
+        min-height: 160px;
       }
     }
   </style>
