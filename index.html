@@ -6,66 +6,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --steel-gray: #262B32;
+      --steel-black: #181a1b;
       --blue-gray-metallic: #6C7A89;
-      --button-hover: #55606e;
+      --button-hover: #23272a;
       --white: #f9f9f9;
     }
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      background: var(--steel-gray);
+      background: var(--steel-black);
       color: var(--white);
       font-family: 'Segoe UI', Arial, sans-serif;
       min-height: 100vh;
+      box-sizing: border-box;
     }
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
     }
     .title {
-      font-size: 3rem;
+      font-size: 2.6rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       color: var(--blue-gray-metallic);
-      margin-bottom: 3rem;
-      margin-top: 0;
-    }
-    .options {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      margin-top: 2.5rem;
+      margin-bottom: 7rem;
+      text-align: center;
       width: 100%;
-      max-width: 320px;
+      user-select: none;
+    }
+    .options-row {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex: 1 0 auto;
     }
     .option-btn {
       background: var(--blue-gray-metallic);
       color: var(--white);
       border: none;
       border-radius: 2rem;
-      padding: 1rem 0;
-      font-size: 1.2rem;
+      padding: 1.1rem 2.2rem;
+      font-size: 1.24rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      box-shadow: 0 2px 12px rgba(44,52,62,0.07);
+      transition: background 0.2s, transform 0.16s;
+      box-shadow: 0 2px 14px rgba(44,52,62,0.07);
+      min-width: 100px;
     }
     .option-btn:hover,
     .option-btn:focus {
       background: var(--button-hover);
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-2px) scale(1.04);
       outline: none;
+    }
+    @media (max-width: 600px) {
+      .title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+      .options-row {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .option-btn {
+        width: 100%;
+        min-width: 0;
+      }
     }
   </style>
 </head>
 <body>
   <div class="title">?</div>
-  <div class="options">
+  <div class="options-row">
     <button class="option-btn">one</button>
     <button class="option-btn">two</button>
     <button class="option-btn">three</button>
