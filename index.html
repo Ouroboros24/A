@@ -3,20 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title>
+    <title>Ouroboros24</title>
     <style>
+        .button {
+            width: 100%; /* Ensure the button takes full width */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+        .expansion {
+            display: none;
+            width: 100%; /* Match the button width */
+            transition: height 0.3s ease; /* Smooth expansion effect */
+        }
+        .button:hover + .expansion {
+            display: block;
+        }
+        .description {
+            display: none;  
+            transition: height 0.3s ease;
+        }
+        .button.active + .expansion {
+            height: auto; /* Allow auto height for smooth transition */
+        }
+        .button.active + .expansion .description {
+            display: block;  
+        }
         .title {
-            font-size: 2em; /* Increased font size */
+            font-size: 1.5em; /* Increase title font size */
         }
     </style>
 </head>
 <body>
-    <h1 class="title">Welcome to the Index Page</h1>
     <div>
-        <button>Movies</button>
-        <button>Books</button>
-        <button>Games</button>
-        <button>Misc</button>
+        <button class="button">Movies</button>
+        <div class="expansion">
+            <div class="description">Brief description about Movies.</div>
+        </div>
+        <button class="button">Books</button>
+        <div class="expansion">
+            <div class="description">Brief description about Books.</div>
+        </div>
+        <button class="button">Games</button>
+        <div class="expansion">
+            <div class="description">Brief description about Games.</div>
+        </div>
+        <button class="button">Misc</button>
+        <div class="expansion">
+            <div class="description">Brief description about Misc.</div>
+        </div>
     </div>
+    <script>
+        document.querySelectorAll('.button').forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const expansion = this.nextElementSibling;
+                if (expansion.style.display === "block") {
+                    expansion.style.display = "none";
+                } else {
+                    expansion.style.display = "block";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
