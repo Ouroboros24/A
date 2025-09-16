@@ -1,35 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A1</title>
-    <style>
-        html, body {
-            height: 99%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background: #000;
-            color: #fff;
-            height: 100vh;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Arial, sans-serif;
-        }
-        .confidential {
-            font-size: 3em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --steel-gray: #262B32;
+      --blue-gray-metallic: #6C7A89;
+      --button-hover: #55606e;
+      --white: #f9f9f9;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--steel-gray);
+      color: var(--white);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      min-height: 100vh;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .title {
+      font-size: 3rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--blue-gray-metallic);
+      margin-bottom: 3rem;
+      margin-top: 0;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 320px;
+    }
+    .option-btn {
+      background: var(--blue-gray-metallic);
+      color: var(--white);
+      border: none;
+      border-radius: 2rem;
+      padding: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      box-shadow: 0 2px 12px rgba(44,52,62,0.07);
+    }
+    .option-btn:hover,
+    .option-btn:focus {
+      background: var(--button-hover);
+      transform: translateY(-2px) scale(1.02);
+      outline: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="confidential">CONFIDENTIAL</div>
+  <div class="title">?</div>
+  <div class="options">
+    <button class="option-btn">one</button>
+    <button class="option-btn">two</button>
+    <button class="option-btn">three</button>
+    <button class="option-btn">four</button>
+  </div>
 </body>
 </html>
